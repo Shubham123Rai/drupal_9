@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Hook functions of the  media_library_bulk_upload module.
+ */
+
+/**
+ * Implements hook_ENTITY_TYPE_load() for view entities.
+ *
+ * Disables the selection functionality of the media library view when used by
+ * the bulk upload.
+ */
+function media_library_bulk_upload_view_load($entities) {
+  $route_match = \Drupal::routeMatch()->getCurrentRouteMatch();
+  $request = \Drupal::request();
+  // The route is not enough as when through ajax a Grid or Table is selected or
+  // the filter is applied, then a views route will be used in the ajax request.
+  if ($route_match->getRouteName() === 'media_library.bulk_upload.upload_form' || ($request->get('media_library_opener_id') === 'media_library.opener.bulk_upload')) {
+    foreach ($entities as $id => $entity) {
+      if ($id === 'media_library') {
+        foreach (['widget', 'widget_table'] as $display_id) {
+          $display =& $entity->getDisplay($display_id);
+          unset($display['display_options']['fields']['media_library_select_form']);
+        }
+      }
+    }
+  }
+}

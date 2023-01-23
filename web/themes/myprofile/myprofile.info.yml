@@ -1,0 +1,34 @@
+# This theme is marked as @internal. It is intended to evolve and change over
+# minor releases.
+# Change record https://www.drupal.org/node/2673014.
+# As the UI of Drupal improves between minor versions, the mark up and assets
+# in the Bartik theme will change. The Bartik theme is not backwards
+# compatible. If you wish to modify the output or assets of Bartik you can:
+# 1. Copy the whole of Bartik and rename it as your own theme. You will need to
+# manually manage your own updates if you want to stay up to date with Bartik's
+# bug fixes and feature support.
+#
+# 2. Sub-theme Bartik. This is only recommended if you want to make minor
+# tweaks and understand that Bartik could break your modifications as it
+# changes.
+name: My Profile
+type: theme
+# lifecycle: deprecated
+# lifecycle_link: https://www.drupal.org/node/3223395#s-bartik
+base theme: false
+description: 'This is demo theme for learning'
+core_version_requirement: ^9
+cone_version_requirement: '^9 || ^10'
+version: 1.0
+libraries:
+  - myprofile/global-styling
+
+regions:
+  header: Header
+  menu: Main Menu
+  content: Content
+  sidebar: sidebar
+  footer: footer
+  footer1: Footer One
+  footer2: Footer Two
+  footer3: Footer Three

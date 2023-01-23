@@ -1,0 +1,10 @@
+name: Image Effect
+type: module
+description: 'A module that add advance resize effect to image module.'
+package: Media
+core_version_requirement: ^9
+
+# Information added by Drupal.org packaging script on 2021-04-05
+version: '2.0.0'
+project: 'image_effect'
+datestamp: 1617635789

@@ -1,0 +1,13 @@
+name: Media Library Bulk Upload
+type: module
+description: Allows uploading files in bulk and converting them to media entities using the media library.
+core_version_requirement: ^8 || ^9 || ^10
+package: Media
+configure: media_library.bulk_upload.settings
+dependencies:
+  - drupal:media_library
+
+# Information added by Drupal.org packaging script on 2022-09-16
+version: '1.0.1'
+project: 'media_library_bulk_upload'
+datestamp: 1663333927

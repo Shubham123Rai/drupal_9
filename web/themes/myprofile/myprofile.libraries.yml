@@ -1,0 +1,11 @@
+global-styling:
+  version: VERSION
+  css: 
+    theme:
+      css/style.css: {}
+      css/print.css: {}
+  js:
+    js/custom.js: {}
+
+  dependencies:
+    - core/jquery
